@@ -1,0 +1,298 @@
+<!-- <?php
+session_start();
+require_once('../config.php');
+require_once('../LIB/Functions.php');
+//Sath dastresi
+if ($_SESSION['USER_NO'] > 0 && HaveMenuAccess('Mobile')) {
+    ?> -->
+    <!DOCTYPE>
+    <html>
+        
+<!-- Mirrored from portal.chaparnet.local/mobile/test/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Nov 2019 14:05:37 GMT -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <head>
+        <title>مانیفست</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#df0025" />
+        
+        <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="Style/normalize.css">
+        <link rel="stylesheet" type="text/css" href="Style/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="Style/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="Style/jquery-confirm.min.css">
+        <link rel="stylesheet" type="text/css" href="Style/toastr.min.css">
+        <link rel="stylesheet" type="text/css" href="Fonts/fontawesome/css/all.min.css">
+       
+        <link rel="stylesheet" type="text/css" href="Style/style.css">
+    
+        <link rel="stylesheet" href="stylesheets/example.css">
+  
+
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script>
+            var host = "serratus.github.io";
+            if ((host == window.location.host) && (window.location.protocol != "live_w_locator.html")) {
+                window.location.protocol = "https";
+            }
+        </script>
+       
+    </head>
+
+
+    <body dir="rtl">
+        <!-- Agar safhe bozorg bood  ino neshon bede -->
+        <!-- <div id="forBigScreen">
+            <img src="./Images/danger.png" />
+            <h1>این صفحه فقط مخصوص <span id="span1">دستگاهای PDA</span> <span id="span2">شرکت کالا رسانان چاپار</span> است !
+            </h1>
+        </div>
+        <div id="loader">
+            <!-- <img src="./Images/loading1.gif" /> -->
+        </div>
+
+        <!-- <section class="hide main-container"> --> 
+            <ul class="page-selector-container">
+                <li id="manifestPage" class="active">مانیفست</li>
+                <li id="packetInfoPage">اطلاعات بسته</li>
+            </ul>
+            <div class="page1">
+                <form id="MainForm" action="#">
+                    <select class="Status" alert="لطفا یک مقدار انتخاب کنید" onchange="" id="Status">
+                        <option value="0" selected="">----انتخاب کنید----</option>
+                    </select>
+
+                    <div class="container1">
+                        <input type="text" id="Agent" placeholder="نماینده" autocomplete="off" />
+                        <input type="text" id="Driver" placeholder="راننده" autocomplete="off" />
+                    </div>
+                    <div class="InputAddOn">
+                        <input type="number" placeholder="شماره بسته" autocomplete="off" name="PackageNumber" id="PackageNumber" class=" PackageNumber InputAddOn-field">
+                        <button id="submit" class="InputAddOn-item"><i class="fas fa-angle-left"></i></button>
+                        <button id="myBtn" class="InputAddOn-item"><i class="fas fa-barcode"></i></button>
+                    </div>
+                    <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="controls">
+        <fieldset class="input-group">
+          
+        </fieldset>
+        <fieldset class="reader-config-group">
+            <label>
+                <span>نوع بارکد</span>
+                <select name="decoder_readers">
+                    <option value="code_128" selected="selected">Code 128</option>
+                    <option value="code_39">Code 39</option>
+                    <option value="code_39_vin">Code 39 VIN</option>
+                    <option value="ean">EAN</option>
+                    <option value="ean_extended">EAN-extended</option>
+                    <option value="ean_8">EAN-8</option>
+                    <option value="upc">UPC</option>
+                    <option value="upc_e">UPC-E</option>
+                    <option value="codabar">Codabar</option>
+                    <option value="i2of5">I2of5</option>
+                    <option value="2of5">Standard 2 of 5</option>
+                    <option value="code_93">Code 93</option>
+                </select>
+            </label>
+            <label>
+                <span>وضوح ( عرض )</span>
+                <select name="input-stream_constraints">
+                    <option value="320x240">320px</option>
+                    <option selected="selected" value="640x480">640px</option>
+                    <option value="800x600">800px</option>
+                    <option value="1280x720">1280px</option>
+                    <option value="1600x960">1600px</option>
+                    <option value="1920x1080">1920px</option>
+                </select>
+            </label>
+            <label>
+                <span>اندازه بارکد</span>
+                <select name="locator_patch-size">
+                    <option value="x-small">خیلی کوچک</option>
+                    <option value="small">کوچگ</option>
+                    <option selected="selected" value="medium">متوسط</option>
+                    <option value="large">بزرگ</option>
+                    <option value="x-large">خیلی بزرگ</option>
+                </select>
+            </label>
+            <label>
+                <span>یافتن سریع بارکد</span>
+                <input type="checkbox" checked="checked" name="locator_half-sample" />
+            </label>
+            <label>
+                <span>تعداد پردازنده</span>
+                <select name="numOfWorkers">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option selected="selected" value="4">4</option>
+                    <option value="8">8</option>
+                </select>
+            </label>
+            <label>
+                <span>دوربین</span>
+                <select name="input-stream_constraints" id="deviceSelection">
+                </select>
+            </label>
+            <label style="display: none">
+                <span>زوم</span>
+                <select name="settings_zoom"></select>
+            </label>
+            <label style="display: none">
+                <span>چراغ قوه</span>
+                <input type="checkbox" name="settings_torch" />
+            </label>
+        </fieldset>
+    </div>
+    <div id="result_strip">
+        <ul class="thumbnails"></ul>
+    </div>
+    <div id="interactive" class="viewport"></div>
+</section>
+</div>
+
+</div>
+
+
+                </form>
+                <div class="PackageListContainer">
+                    <ul class="PackageListHeader">
+                        <li id="FirstMenu" class="noselect selectedBtn">0</li>
+                        <li id="SecondMenu" class="noselect ">0</li>
+                        <li id="ThirdMenu" class="noselect">0</li>
+                    </ul>
+                    <div class="PackageNumsContainerDiv">
+                        <ul class="PackageNumsContainer">
+
+                        </ul>
+                    </div>
+                </div>
+                <button id="submit2">تایید نهایی</button>
+            </div>
+            <div class="page2 hide">
+                <form id="MainFormPacketInfo" action="#">
+                    <div class="InputAddOn">
+                        <input type="number" placeholder="شماره بسته/بارنامه" autocomplete="off" name="InfoPackageNumber" id="InfoPackageNumber" class=" PackageNumber InputAddOn-field">
+                        <button id="submit" class="InputAddOn-item"><i class="fas fa-angle-left"></i></button>
+                    </div>
+                </form>
+                <div class="info-conatiner">
+                    <div class="row first-row">
+                        <div class="consignment-num">
+                            شماره بارنامه: <span></span>
+                        </div>
+
+                    </div>
+                    <div class="row second-row">
+                        <div class="pickup-date">
+                            تاریخ پیکاپ: <span></span>
+                        </div>
+                        <div class="packet-status">
+                            وضعیت : <span></span>
+                        </div>
+                    </div>
+                    <div class="row third-row">
+                        <div class="terms-of-payment">
+                            روش پرداخت : <span></span>
+                        </div>
+                        <div class="weight">
+                            وزن : <span></span>
+                        </div>
+                        <div class="content">
+                            محتوا: <span></span>
+                        </div>
+                    </div>
+                    <div class="row fifth-row">
+                        <div class="sum-price">
+                            جمع کل هزینه : <span></span>
+                        </div>
+                    </div>
+                    <div class="section-title">
+                        <h1>اطلاعات فرستنده :</h1>
+                    </div>
+                    <div class="row">
+                        <div class="from-city">
+                            از شهر : <span></span>
+                        </div>
+                    </div>
+                    <div class="row sixth-row">
+                        <div class="sender-name">
+                            نام : <span></span>
+                        </div>
+                    </div>
+                    <div class="row seventh-row">
+                        <div class="sender-addr">
+                            آدرس : <span></span>
+                        </div>
+                    </div>
+                    <div class="row eighth-row">
+                        <div class="sender-phone">
+                            تلفن : <span></span>
+                        </div>
+                        <div class="sender-mobile">
+                            همراه : <span></span>
+                        </div>
+                    </div>
+                    <div class="section-title">
+                        <h1>اطلاعات گیرنده :</h1>
+                    </div>
+                    <div class="row">
+                        <div class="to-city">
+                            به شهر : <span></span>
+                        </div>
+                    </div>
+                    <div class="row sixth-row">
+                        <div class="receiver-name">
+                            نام : <span></span>
+                        </div>
+                    </div>
+                    <div class="row seventh-row">
+                        <div class="receiver-addr">
+                            آدرس : <span></span>
+                        </div>
+                    </div>
+                    <div class="row eighth-row">
+                        <div class="receiver-phone">
+                            تلفن : <span></span>
+                        </div>
+                        <div class="receiver-mobile">
+                            همراه : <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <span id="audio"></span>
+
+    </body>
+    <script src="Script/jquery.min.js"></script>
+    <script src="Script/jquery-ui.min.js"></script>
+    <script src="Script/jquery-confirm.min.js"></script>
+    <script src="Script/toastr.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/quagga.min.js" type="text/javascript"></script>
+<!-- <script src="live_w_locator.js" type="text/javascript"></script> -->
+<script src="js/scale.fix.js" type="text/javascript"></script>
+    <script>
+        //date & user that send to api
+        var current_time = "<?php echo date('Y-m-d H:i:s') ?>";
+        var current_user = "<?php echo $_SESSION['USER_NO'] ?>";
+    </script>
+    <script src="Script/script9bf3.js?15"></script>
+
+    
+<!-- Mirrored from portal.chaparnet.local/mobile/test/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Nov 2019 14:05:43 GMT -->
+</html>
+<?php
+} else {
+    header('Location:../');
+}
+?>

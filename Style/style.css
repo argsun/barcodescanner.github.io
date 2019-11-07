@@ -1,0 +1,326 @@
+@font-face {
+    font-family: 'BYekan';
+    src: url('../Fonts/BYekand41d.eot?#') format('eot'), url('../Fonts/BYekan.ttf') format('truetype'), url('../Fonts/BYekan.woff') format('woff');
+}
+
+* {
+    font-family: 'BYekan';
+}
+
+#loader {
+    display: block;
+    width: 100%;
+    /* height: 565px; */
+}
+
+#loader>img {
+    margin-top: 160px;
+    height: 150px;
+    width: 150px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+    #forBigScreen {
+        display: none;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #dddddd;
+      
+        margin-top: 5px;
+    }
+    .Status {
+        width: 100%;
+        height: 55px;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding-right: 5px;
+        border: 0px;
+        border: 0px;
+        border-radius: 4px;
+        text-align: center;
+    }
+    .main-container {
+        margin: 8px;
+        text-align: center;
+    }
+    .container1 {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    .container1 input {
+        margin-top: 5px;
+        width: 50%;
+        height: 55px;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding-right: 5px;
+        border: 0px;
+        border-radius: 4px;
+        margin: 5px 2px 0 2px;
+        text-align: center;
+    }
+    .InputAddOn {
+        display: flex;
+        margin-top: 5px;
+        width: 100%;
+        height: 55px;
+        margin: 5px auto;
+        text-align: center;
+    }
+    .InputAddOn-field {
+        flex: 1;
+        /* field styles */
+        font-size: 16px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 0px;
+        padding-right: 5px;
+        color: white;
+        text-align: center;
+    }
+    .InputAddOn-item {
+        /* item styles */
+        width: 45px;
+        border: 0px;
+        background-color: rgba(200, 0, 0, 0.6);
+        border-radius: 4px 0 0 4px;
+        color: white;
+        font-size: 32px;
+        text-align: center;
+    }
+    .PackageListContainer {
+        height: 260px;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 5px;
+        background-color: #656565;
+    }
+    .PackageListHeader {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #dddddd;
+        text-align: center;
+    }
+    .PackageListHeader li {
+        width: 33.333%;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        height: 40px;
+        display: inline-block;
+        line-height: 40px;
+        color: white;
+        float: right;
+        font-size: 17px;
+        text-align: center;
+    }
+    .PackageNumsContainerDiv {
+        list-style-type: none;
+        background-color: #656565;
+        direction: ltr;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 330px;
+        text-align: center;
+    }
+    .PackageNumsContainer {
+        padding: 0;
+        margin: 0;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -webkit-column-width: 50%;
+        -moz-column-width: 50%;
+        column-width: 50%;
+        text-align: center;
+    }
+    .PackageNumsContainer>li {
+        color: white;
+        font-size: 16px;
+        padding: 8px 0;
+        display: list-item;
+        text-align: center;
+    }
+    #FirstMenu {
+        background-color: #323232;
+        text-align: center;
+    }
+    #SecondMenu {
+        background-color: #7da87b;
+        text-align: center;
+    }
+    #ThirdMenu {
+        background-color: #f85959;
+        text-align: center;
+    }
+    .ui-autocomplete {
+        max-height: 160px;
+        overflow-y: auto;
+        text-align: center;
+        /* prevent horizontal scrollbar */
+    }
+    /* IE 6 doesn't support max-height
+       * we use height instead, but this forces the menu to always be this tall
+       */
+    * html .ui-autocomplete {
+        height: 100px;
+        text-align: center;
+    }
+    .text-focus {
+        border: 1px solid #ea9a00;
+    }
+    #PackageNumber {
+        direction: ltr;
+        text-align: center;
+    }
+    form {
+        margin-bottom: 5px;
+    }
+    #submit2 {
+        margin-top: 105px;
+        clear: both;
+        width: 100%;
+        background-color: #4fb783;
+        border: 0px;
+        height: 40px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .hide {
+        display: none;
+    }
+    .PackageNumsContainerDiv::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #323232;
+    }
+    .PackageNumsContainerDiv::-webkit-scrollbar {
+        width: 10px;
+        background-color: #323232;
+    }
+    .PackageNumsContainerDiv::-webkit-scrollbar-thumb {
+        background-color: #f85959;
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+    }
+    .noselect {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+                                        supported by Chrome and Opera */
+    }
+    .error-list {
+        color: red;
+    }
+    .selectedBtn {
+        border-bottom: #f85959 solid 4px;
+    }
+    .page-selector-container {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 4px 0;
+    }
+    .page-selector-container li {
+        width: 50%;
+        height: 40px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        margin: 4px 4px;
+        background-color: rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+    }
+    .page-selector-container .active {
+        background-color: rgba(200, 0, 0, 0.6);
+    }
+    .page2 .info-conatiner {}
+    .page2 .info-conatiner .row {
+        display: flex;
+        justify-content: space-between;
+    }
+    .page2 .info-conatiner .row div {
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 0px;
+        padding-right: 5px;
+        color: white;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2px;
+        border-radius: 2px;
+        padding: 8px;
+        font-size: .70em;
+        color: #4fb783;
+        flex-grow: 1;
+    }
+    .page2 .info-conatiner .row div span {
+        font-size: 1.70em;
+        color: white;
+    }
+    .page2 .info-conatiner .row .consignment-num {
+        flex-grow: 4;
+    }
+    .page2 .info-conatiner .row .pickup-date {
+        flex-grow: 1;
+    }
+    .page2 .info-conatiner .section-title {
+        display: flex;
+        justify-content: flex-start;
+        text-align: right;
+        color: #4fb783;
+        font-size: .70em;
+    }
+    .page2 .info-conatiner .section-title h1 {
+        margin: 0.35em 0;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    #loader {
+        display: none;
+    }
+    section {
+        display: none;
+    }
+    body {
+        text-align: center;
+        margin-top: 40px;
+    }
+    #forBigScreen>img {
+        max-width: 365px;
+        margin: 0 auto;
+    }
+    #forBigScreen>h1 {
+        font-size: 22px;
+        color: #323232;
+    }
+    #forBigScreen>h1>#span2 {
+        font-size: 22px;
+        color: #f85959;
+    }
+    #forBigScreen>h1>#span1 {
+        font-size: 28px;
+    }
+}
